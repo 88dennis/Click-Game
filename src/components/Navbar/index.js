@@ -7,12 +7,12 @@ function Navbar(props) {
 
 <nav className="navbar">
 
-    <div><a href="/"><p className="par1">Clicky Game</p></a></div>
+    <div><a href="/"><p className="partitle">Clicky Game</p></a></div>
     
     <div className="clicktobegin"><p className="par1">Click an image to begin!</p></div>
-    <div>Score:  {props.score} </div>
-    <li>Losses:  {props.losses} </li>
-    <li>Max Score:  {props.maxScore} </li>
+    <div><p className="par1">Score:  {props.score}</p></div>
+    <div><p className="par1">Losses:  {props.losses}</p></div>
+    <div><p className="par1">Max Score:  {props.maxScore}</p></div>
 </nav>
 
     );

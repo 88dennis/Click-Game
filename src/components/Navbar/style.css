@@ -2,7 +2,7 @@
     margin-bottom: 0;
     display: flex;
     justify-content: space-between;
-    background-color: gray;
+    background-color: rgba(20, 19, 19, 0.8);
     width: 100%;
     position: fixed;
     z-index: 99;
@@ -12,3 +12,33 @@
 
   }
 
+  .partitle {
+      
+      color: white;
+
+      font-family: 'Luckiest Guy', cursive;
+      letter-spacing: 2px;
+      font-size: 20px;
+      
+  }
+  a {
+      text-decoration: none;
+      color: white
+
+  }
+  a:visited {
+    color:white;
+  }
+  .partitle:hover {
+  
+    -ms-transform: scale(1.2); /* IE 9 */
+       -webkit-transform: scale(1.2); /* Safari 3-8 */
+       transform: scale(1.2); 
+       transition:all 0.5s ease;
+ }
+
+ .par1 {
+     color: white;
+     font-family: 'Lato', sans-serif;
+     font-size: 15px;
+ }

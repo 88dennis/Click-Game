@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import VillainCard from "./components/VillainCard";
 import Wrapper from "./components/Wrapper";
-import Title from "./components/Title";
 import Navbar from "./components/Navbar";
 import villains from "./images.json";
-
-
 console.log(villains)
 
+//shuffle array
 function shuffleArray(array) {
   let i = array.length - 1;
   for (; i > 0; i--) {
@@ -18,7 +16,6 @@ function shuffleArray(array) {
   }
   return array;
 }
-
 
 class App extends Component {
   // Setting this.state.friends to the friends json array
@@ -31,11 +28,10 @@ class App extends Component {
     maxScore: 0
   };
 
-//if clicked guesses includes
-
   handleBtnClick = villainId => {
     const newState = {...this.state};
     //cloning the old state
+    //creating new state
 
     if(newState.guesses.includes(villainId)) {
       console.log("you lose");
@@ -54,33 +50,16 @@ class App extends Component {
     
     this.setState(newState);
   };
-
-  // removeFriend = id => {
-  //   // Filter this.state.friends for friends with an id not equal to the id being removed
-  //   const villains = this.state.villains.filter(villain => villain.id !== id);
-  //   // Set this.state.friends equal to the new friends array
-  //   this.setState({ villains });  
-  // };
-
   render() {
-    
-    // const shuffledVillains = ;
-
     return (
       <div>
       <Navbar 
       score = {this.state.score}
       losses = {this.state.losses}
       maxScore = {this.state.maxScore}>
-      
       </Navbar>
       <Wrapper>
-
-
-        <Title>Clicky Game</Title>
-
         {this.state.villains.map(villain => (
-          
           <VillainCard
             handleBtnClick={this.handleBtnClick}
             id={villain.id}
@@ -88,7 +67,6 @@ class App extends Component {
             name={villain.name}
             image={villain.image}
           />
-          
         ))}
       </Wrapper>
 
@@ -96,5 +74,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;
