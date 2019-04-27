@@ -6,17 +6,6 @@ import villains from "./images.json";
 
 console.log(villains)
 
-function shuffleArray(array) {
-  let i = array.length - 1;
-  for (; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    const temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-  return array;
-}
-
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
@@ -26,8 +15,6 @@ class App extends Component {
     losses: 0,
     guesses: 0
   };
-
-
   // removeFriend = id => {
   //   // Filter this.state.friends for friends with an id not equal to the id being removed
   //   const villains = this.state.villains.filter(villain => villain.id !== id);
@@ -35,12 +22,24 @@ class App extends Component {
   //   this.setState({ villains });  
   // };
   render() {
-    const shuffledVillains = shuffleArray(this.state.villains);
+    function shuffleArray(array) {
+      let i = array.length - 1;
+      for (; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+      return array;
+    }
+    // const shuffledVillains = ;
+
     return (
+      
       <Wrapper>
         <Title>Clicky Game</Title>
 
-        {shuffledVillains.map(villain => (
+        {shuffleArray(this.state.villains).map(villain => (
           
           <VillainCard
             removeFriend={this.removeFriend}
@@ -55,6 +54,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;
