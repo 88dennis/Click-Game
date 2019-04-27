@@ -33,8 +33,7 @@ function VillainCard(props) {
         <img 
         alt={props.name} 
         src={props.image} 
-        onClick={() => props.shuffleArray(props)} />
-
+        onClick={() => props.handleBtnClick(props.id)} />
       </div>
 
     </div>
